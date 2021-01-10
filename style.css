@@ -1,0 +1,446 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+h3,
+h4{
+    color: rgb(104, 78, 78);
+
+}
+
+button {
+    border-radius: 8px;
+    padding: 1em;
+}
+
+@media (min-width: 1440px) {
+    html {
+      font-size: 18px;
+    }
+  }
+
+body {
+    background: linear-gradient(to left, #345e88,rgb(218, 216, 208));
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    line-height: 1.5;
+}
+/* __________________________________________________nav__________________________________________________________ */
+nav {
+    display: flex;
+    /* max-width: 80%; */
+    margin: 0 auto;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #234261;
+
+}
+
+.logo {
+    color: rgb(226,226,226);
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.nav-links li {
+    list-style: none;
+    transition: transform .2s;
+}
+.nav-links li:hover {
+    transform: scale(1.5);
+}
+
+.nav-links a {
+    color: rgb(226,226,226);
+    text-decoration: none;
+    font-size: 1em;
+    margin: 5px;
+}
+
+.burger div {
+    width: 25px;
+    height: 4px;
+    background-color: rgb(218, 216, 208);
+    margin: 3px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+@media screen and (max-width: 1024px){
+    .nav-links {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    *{
+        font-size: 16px;
+    }
+
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #345e88;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 40%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+     .burger {
+        display: block;
+    }
+    .burger:hover{
+        transform: scale(1.5);
+    }
+}
+
+@media screen and (max-width: 460px){
+    html{
+        font-size: 12px;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+/* ______________________________________________________containers incommon_______________________________________________ */
+.main-container,
+.join-us,
+.statistics,
+.ppl-choice,
+.suggestions{
+    width: 85%;
+    margin: 1em  auto;
+    background-color: #fff;
+    border: 0.2em solid rgb(218, 216, 208);
+    border-radius: 1em;
+}
+
+.text-container,
+.join-us,
+.statistics-piechart,
+.ppl-choice-piechart,
+.suggestions-sec {
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+padding: 1em 0;
+font-size: 1em;
+}
+/* ______________________________________________________main container_______________________________________________ */
+
+
+.text-container span {
+    margin-left: 1.5em;
+    flex: 1;
+}
+.text-container span h3 {
+    display: inline;
+    font-size: 1.2em;
+}
+
+@media screen and (max-width: 768px){
+    .text-container {
+        display: block;
+        padding: 1em;
+    }
+
+    .emblem-container {
+        text-align: center;
+    }    
+    .emblem {
+        max-width: 80%;
+    }
+}
+/* ____________________________________________________________join-us_____________________________________________ */
+.join-us {
+    font-size: .8em;
+    padding: 0;
+    justify-content: space-evenly;
+}
+
+
+.login {
+    text-align: center;
+    width: 45%;
+    color: rgb(104, 78, 78);
+    padding: 1em;
+}
+
+.label {
+    margin-bottom: 1em;
+}
+
+.login-form input,
+.register-form input {
+    border-radius: 4px;
+    margin: 0.5em 0;
+    height: 2em;
+    padding: 0 0.5em;
+    font-size: 1em;
+    outline: none;
+    border: 1px solid silver;
+}
+
+.register-form input{
+    margin: 0.2em 0;
+    height: 2em;
+    font-size: 1em;
+}
+
+.login-form button,
+.register-form button {
+    margin: 1em auto;
+    display: block;
+    height: 3em;
+    text-transform: uppercase;
+    color:rgb(218, 216, 208);
+    background-color: #345e88;
+    border: none;
+    transition: transform 0.2s;
+}
+
+.login-form button:hover,
+.register-form button:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+    background-color: #234261;
+    border: 1px solid rgb(218, 216, 208);
+    color: rgb(218, 216, 208);
+}
+
+#jmbg_error,
+#password_error{
+    color: red;
+    margin-bottom: 1em;
+    display: none;
+}
+
+.register {
+    text-align: center;
+    width: 45%;
+    background-color: rgb(218, 216, 208);
+    color: rgb(104, 78, 78);
+    margin: .5em 0;
+    border-radius: 1em;
+}
+
+@media screen and (max-width:768px){
+    .join-us {
+        display: block;
+        overflow: hidden;
+    }
+    .login {
+        margin: 0 auto;
+    }
+
+    .register {  
+        margin: 0 auto;
+        margin-bottom: 1em;
+        border-left: none;
+        border-top: 1px solid white;
+    }
+
+    .login-form input,
+    .register-form input {
+        border-radius: 4px;
+        margin: 0 auto;
+        height: 1.5em;
+        padding: 0 0.5em;
+        font-size: .8em;
+        outline: none;
+        border: 1px solid silver;
+    }
+
+    .login-form button,
+    .register-form button {
+    margin-top: 1em;
+    padding: 0.5em;
+    display: block;
+    height: 2em;
+    text-transform: none;
+    font-size: .8em;
+    color:rgb(218, 216, 208);
+    background-color: rgb(104, 78, 78);
+    border: none;
+    transition: transform 0.2s;
+}
+
+}
+
+/* ____________________________________________________________statistics_____________________________________________ */
+.statistics{
+    text-align: center;
+}
+
+.statistics-piechart {
+    overflow: hidden;
+}
+
+.piechart {
+    width: 20em;
+    height: 20em;
+}
+
+.piechart-note {
+    font-style: italic;
+    color: rgb(104, 78, 78);
+    margin-top: 3em;
+}
+
+@media screen and (max-width: 1150px){
+    .piechart {
+        width: 15em;
+        height: 15em;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .piechart {
+        width: 10em;
+        height: 10em;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .ppl-choice-piechart,
+    .statistics-piechart {
+        display: block;
+    }
+}
+/* ____________________________________________________________ppl-choice_____________________________________________ */
+.ppl-choice {
+    text-align: center;
+}
+
+.ppl-choice-piechart {
+    overflow: hidden;
+}
+
+.piechart-note span {
+    font-style: normal;
+    font-weight: bold;
+    color: black;
+}
+/* ____________________________________________________________suggestions_____________________________________________ */
+.suggestions {
+    text-align: center;
+}
+
+.suggestions-input {
+    min-height: 16vh;
+    width: 80%;
+    background: rgb(226,226,226);
+    font-size: 1em;
+    border: 0.2em solid#345e88;
+    border-radius: 8px;
+    padding: 0 1em;
+    margin: 2em;
+}
+
+.suggestions-button {
+    margin-bottom: 1em;
+    height: 3em;
+    text-transform: uppercase;
+    color: rgb(218, 216, 208);
+    background-color: #345e88;
+    border: none;
+    width: 30%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.suggestions-button:hover {
+    transform: scale(1.2);
+    background-color: #234261;
+}
+/* ____________________________________________________________footer_____________________________________________ */
+.site-footer {
+    padding-top: 2em;
+    text-align: center;
+    margin: 0  auto;
+    background-color: #234261;
+    color: rgb(218, 216, 208);   
+}
+
+.site-footer h3,
+.site-footer h4 {
+    color: rgb(114, 97, 97);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2em;
+}
+
+.footer-list {
+    width: 25%;
+    border-top: 0.1em solid black;
+}
+
+.footer-ul{
+    
+    list-style: none;
+    color: rgb(163, 144, 144);
+}
+
+.footer-nav-li {
+    margin: 2em 0;
+    transition: transform 0.2s;
+    cursor: pointer;
+    font-style: italic;
+}
+
+.footer-nav-li:hover {
+    transform: scale(1.2);
+}
+
+.footer-nav-li a {
+    color: black;
+}
+
+.footer-nav-links {
+    color: rgb(218, 216, 208);
+    text-decoration: none;;
+}
+ 
+.social-png {
+   height: 3em;
+   width: 3em;
+   margin: 0.2em;
+}
+
+.icon-rights {
+    color: rgb(71, 50, 50);
+    font-size: 0.5em;
+    text-align: right;
+    margin: 0;
+}
+
+.icon-rights a {
+    text-decoration: none;
+    color: rgb(48, 33, 33);
+}
+
